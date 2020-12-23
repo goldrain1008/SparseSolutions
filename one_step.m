@@ -1,5 +1,6 @@
-%% Exercise 3.2
-function Eonestep=one_step(k,m,n)
+%One Step Sparsification 
+
+function onestep=one_step(k,m,n)
     xstar=rand([n 1]);
     % Generate a vector xstar with length n whose values are uniformly
     % distributed in [0 1].
@@ -10,7 +11,7 @@ function Eonestep=one_step(k,m,n)
     xbar=pinv(A)*b;
     % Generate A and b and find xbar by using pinv.
     xTilde=sparsify(xbar,k); % Substitute xTilde for sparsified xbar
-    Eonestep=norm(xTilde-xstar)/norm(xstar); % Find error 
+    onestep=norm(xTilde-xstar)/norm(xstar); % Find error 
 end
 
 
